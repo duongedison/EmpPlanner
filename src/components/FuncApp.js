@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from "react-dom";
-import Tinytable from './Tinytable';
-import Calview from './Calview';
+import Tinytable from './FuncComp/Tinytable';
+import Calview from './FuncComp/Calview';
 import Tabs from './Tabs';
-import PopUpBox from './ResquestPopup/PopUpBox';
-import Newtab from './Newtab';
+import PopUpBox from './FuncComp/FMResquestPopup/PopUpBox';
+import Newtab from './FuncComp/Newtab';
 
 require('../styles.css');
 

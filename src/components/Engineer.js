@@ -11,7 +11,7 @@ class ProgView extends React.Component {
     }
     updateMessage() {
         this.setState({
-            message: "TADAHHH!!!! BAMMMM!!!! there should some sort of table here and the engineer's info (e.g. accept request button from who ever requested!)"
+            message: "TADAHHH!!!! BAMMMM!!!! there should some sort of table of employee list"
         });
     }
     render() {

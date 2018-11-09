@@ -1,9 +1,9 @@
 import React from 'react';
 import {render} from "react-dom";
-import{makeData} from "./Utils";
+import{makeData} from "../Utils";
 import ReactTable from "react-table";
 import "react-table/react-table.css";
-import Testset from './Testset';
+import Testset from '../Testset';
 
 class FunctionalView extends React.Component{
   state = {response: ''};
@@ -96,35 +96,22 @@ class FunctionalView extends React.Component{
             {
               Header: "Info",
               columns: [
-
                 {
-                  Header: "Employee Num",
+                  Header: "ID",
                   accessor: "EmpNo",
                   Cell:this.renderEditable
                 },
-                {
-                  Header: "ID num",
-                  accessor: "MyID",
-                  Cell:this.renderEditable
-
-                },
-                {
-                  Header: "Type",
-                  accessor: "Type",
-                  Cell:this.renderEditable
-                },
-
                 {
                   Header: "Level",
                   accessor: "Level",
                   Cell:this.renderEditable
                 },
+                 {
+                   Header: "Department",
+                   accessor: "Dept",
+                   Cell:this.renderEditable
 
-                {
-                  Header: "Function Manager",
-                  accessor: "FM",
-                  Cell:this.renderEditable
-                },
+                 },
               ]
             }  
           ]}

@@ -1,9 +1,9 @@
 import React from 'react';
 import {render} from "react-dom";
-import{makeData} from "./Utils";
+import{makeData} from "../Utils";
 import ReactTable from "react-table";
 import "react-table/react-table.css";
-import Testset from './Testset';
+import Testset from '../Testset';
 
 class FunctionalView extends React.Component{
   state = {response: ''};

@@ -1,8 +1,9 @@
 
 import React from 'react';
+import logo from '../download.png';
 
 class Login extends React.Component{
-
+    
     myInput = React.createRef();
 
     goToTable = (event) => {
@@ -17,6 +18,9 @@ class Login extends React.Component{
     
     render(){
      return(
+     
+
+    
     <form className="login-selector" onSubmit={this.goToTable}>
 <ul>
   <span><a href="/">NG</a></span>
@@ -25,7 +29,11 @@ class Login extends React.Component{
 </ul>
 
     <div class = "Container">
+    
+        <img src={logo} alt={"logo"}/>
+    
         <span>Welcome to Staff Planner!</span>
+         
         <input type="text" placeholder="Username" />
         <input type="text" placeholder="Password" />
 

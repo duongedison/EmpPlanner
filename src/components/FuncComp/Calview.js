@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
-import { makeData } from "./Utils";
-import Testset from './Testset';
+import { makeData } from "../Utils";
+import Testset from '../Testset';
 
 // Import React Table
 import ReactTable from "react-table";
@@ -80,7 +80,7 @@ class smalltable extends React.Component {
                 Header: 'Stats',
               columns: [
                 {
-                  Header: "ProjectsCompleted",
+                  Header: "Hour Availibility",
                   accessor: "ProjectsCompleted",
             
                   Cell:row =>(
