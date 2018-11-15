@@ -5,6 +5,8 @@ import Calview from './FuncComp/Calview';
 import Tabs from './Tabs';
 import PopUpBox from './FuncComp/FMResquestPopup/PopUpBox';
 import Newtab from './FuncComp/Newtab';
+import Dropdown from './Dropdown';
+import DateEx from './DateEx';
 
 require('../styles.css');
 
@@ -16,7 +18,9 @@ function App() {
   <span><a href="/">Logout</a></span>
 </ul>
       <h1>Funtional Manager View</h1>
+      <DateEx/>
       <PopUpBox/>
+      <Dropdown/>
       <Tabs>
 
         <div label="Employee List">

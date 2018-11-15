@@ -2,6 +2,8 @@ import React from "react";
 import { render } from "react-dom";
 import { makeData} from "../Utils";
 import _ from 'lodash'
+import Dropdown from "../Dropdown";
+import Submit2 from "./PMResquestPopup/Submit2"
 
 // Import React Table
 import ReactTable from "react-table";
@@ -26,7 +28,7 @@ class App extends React.Component {
               columns: [
                 {
                   Header: "Project Name",
-                  accessor: "firstName",
+                  accessor: "projName",
                   PivotValue: ({ value }) =>
                     <span style={{ color: "darkred" }}>
                       {value}
@@ -57,9 +59,9 @@ class App extends React.Component {
           ]}
           defaultPageSize={10}
           className="-striped -highlight"
-          pivotBy={["firstName", "lastName"]}
+          pivotBy={["projName", "lastName"]}
           defaultSorted={[
-            { id: "firstName", desc: false },
+            { id: "projName", desc: false },
             { id: "lastName", desc: true }
           ]}
           collapseOnSortingChange={false}
@@ -69,47 +71,77 @@ class App extends React.Component {
           SubComponent={row => {
             return (
               <div style={{ padding: "20px" }}>
-                <em>
+                {/* <em>
                   You can put any component you want here, even another React
                   Table!
                 </em>
                 <br />
-                <br />
+                <br /> */}
                 <ReactTable
                   data={data}
                   columns={[
                     {
-                      Header: "Name",
-                      columns: [
-                        {
-                          Header: "First Name",
-                          accessor: "firstName"
-                        },
-                        {
-                          Header: "Last Name",
-                          id: "lastName"
-                        }
-                      ]
+                        Header: "Jan",
+                        accessor: "Month",
+                        Cell:this.renderEditable
                     },
                     {
-                      Header: "Info",
-                      columns: [
-                        {
-                          Header: "Age",
-                          accessor: "age"
-                        },
-                        {
-                          Header: "Visits",
-                          accessor: "visits"
-                        }
-                      ]
-                    }
+                        Header: "Feb",
+                        accessor: "Month",
+                        Cell:this.renderEditable
+                    },
+                    {
+                        Header: "Mar",
+                        accessor: "Month",
+                        Cell:this.renderEditable
+                    },
+                    {
+                        Header: "April",
+                        accessor: "Month",
+                        Cell:this.renderEditable
+                    },{
+                        Header: "May",
+                        accessor: "Month",
+                        Cell:this.renderEditable
+                    },
+                    {
+                        Header: "June",
+                        accessor: "Month",
+                        Cell:this.renderEditable
+                    },
+                    {
+                      Header: "Hour Availibility",
+                      accessor: "ProjectsCompleted",
+                      
+                      Cell:row =>(
+                        <div 
+                          style={{
+                            width: '100%',
+                            height: '100%',
+                            backgroundColor: '#dadada',
+                          }}
+                        >
+                        <div 
+                          style={{
+                            width: `${row.value}%`,
+                            height: '100%',
+                            backgroundColor: row.value >80 ?'#85cc00'
+                                :row.value > 50 ? '#ffbf00'
+                                :'#ff2e00',
+                                borderRadius:'2px',
+                                transition: 'all .2s eas-out'
+                          }}
+                          />
+                        </div>
+                      )  
+                      
+                    },
                   ]}
-                  defaultPageSize={3}
+                  defaultPageSize={1}
                   showPagination={false}
                   SubComponent={row => {
                     return (
-                      <div style={{ padding: "20px" }}>Sub Component!</div>
+                      <div style={{ padding: "20px" }}><Submit2/></div>
                     );
                   }}
                 />

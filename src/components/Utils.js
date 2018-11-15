@@ -19,6 +19,7 @@ const range = len => {
 const newEmployee = () => {
     const statusChance = Math.random();
     return {
+      projName: namor.generate({ words: 2, numbers: 0 }),
       firstName: namor.generate({ words: 1, numbers: 0 }),
       lastName: namor.generate({ words: 1, numbers: 0 }),
       hours: Math.floor(Math.random() * 20),

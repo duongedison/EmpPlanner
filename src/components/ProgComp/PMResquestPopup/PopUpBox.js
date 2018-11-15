@@ -3,7 +3,7 @@ import Popup from 'reactjs-popup'
 import Submit from './Submit'
 
 export default () => (
-  <Popup trigger={<button className="button"> Request form </button>} modal>
+  <Popup trigger={<button className="button"> Request</button>} modal>
     {close => (
       <div className="modal">
         <a className="close" onClick={close}>

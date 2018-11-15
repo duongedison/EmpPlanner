@@ -4,6 +4,7 @@ import{makeData} from "../Utils";
 import ReactTable from "react-table";
 import "react-table/react-table.css";
 import Testset from '../Testset';
+import PopUpBox from "./PMResquestPopup/PopUpBox"
 
 class FunctionalView extends React.Component{
   state = {response: ''};
@@ -83,6 +84,11 @@ class FunctionalView extends React.Component{
             {
               Header: "Name",
               columns: [
+                {
+                  header: '',
+                  id: <PopUpBox/>,
+                  Cell:<PopUpBox/>,
+                },
                 {
                   Header: "First Name",
                   accessor: "First name",

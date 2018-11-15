@@ -1,5 +1,6 @@
 import React from 'react';
 import { render } from "react-dom";
+import Dropdown from "../../Dropdown"
 
 class Submit extends React.Component {
     constructor(props) {
@@ -22,7 +23,7 @@ class Submit extends React.Component {
     render() {
       return (
         <form onSubmit={this.handleSubmit}>
-        
+        <Dropdown/>
         <label>
           Choose the type of Skill set:
           <select>

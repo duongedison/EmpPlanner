@@ -1,36 +1,40 @@
 import React from 'react';
 import { render } from "react-dom";
+import DateEx from "../../DateEx";
 
 class Submit extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {value: ''};
-  
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
-    }
-  
-    handleChange(event) {
-      this.setState({value: event.target.value});
-    }
-  
-    handleSubmit(event) {
-      alert('There has been a request sent by ' + this.state.value);
+  constructor(props) {
+    super(props);
+    this.state = {
+      firstname: '',
+      lastname: ''
+    };
 
-      event.preventDefault();
-    }  
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleChange(event) {
+    this.setState({[event.target.name]: event.target.value});
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    alert('There has been a request sent by ' + this.state.firstname + ' ' + this.state.lastname);
+  }
     render() {
       return (
         <form onSubmit={this.handleSubmit}>
+        <DateEx/>
         
         <label>
             First Name:
-            <input type="text" placeholder="First Name" onChange={this.handleChange} />
+            <input type="text" name='firstname' placeholder="First Name" onChange={this.handleChange} value = {this.state.firstname} />
         </label>
 
         <label>
             Last Name:
-            <input type="text" placeholder="Last Name"/>
+            <input type="text" name='lastname' placeholder="Last Name" onChange={this.handleChange} value={this.state.lastname} />
         </label>
     <br/>
 
